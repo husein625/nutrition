@@ -1237,6 +1237,10 @@
             width: 38px;
             height: 24px;
         }
+        #card-num:focus{
+            outline: none !important;
+
+        }
 
         ul.bordered-ul li:not(.extended-li) .checkbox-row .payments .img.visa {
             background-image: url('assets/images/payment-methods/visa.svg');
@@ -1939,10 +1943,8 @@
                                     <div class="row">
                                         <div class="col-12 col-lg-auto flex-grow-1 pr-lg-0 coupon-input-container">
                                             <div class="input-wrap"><input type="text" name="couponCode" minlength="2"
-                                                    id="coupon_code" class="form-control ch-input"> <label
-                                                    for="coupon_code" class="input-label"><span><span>Discount
-                                                            code</span></span> <span style="display: none;"><span>Gift
-                                                            card or discount code</span></span></label>
+                                                    id="coupon_code" class="form-control ch-input" placeholder="Discount code"> 
+                                     
                                                 <!---->
                                             </div>
                                         </div>
@@ -2053,8 +2055,7 @@
                                     <div class="input-wrap"><input data-vv-validate-on="change" name="email"
                                             autocomplete="email" type="email" id="customer_email"
                                             class="form-control ch-input input-email pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="customer_email"
-                                            class="input-label"><span>Email</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="Email">
                                         <div class="text-danger"><span>
                                                 This field is required
                                             </span></div>
@@ -2106,8 +2107,7 @@
                                     <div class="input-wrap"><input name="first_name" autocomplete="given-name"
                                             type="text" id="shipping_first_name"
                                             class="form-control ch-input input-shipping-first-name pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="shipping_first_name"
-                                            class="input-label"><span>First name</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="First Name"> 
                                         <div class="text-danger"><span>
                                                 First name is required
                                             </span></div>
@@ -2117,8 +2117,7 @@
                                     <div class="input-wrap"><input name="last_name" autocomplete="family-name"
                                             type="text" id="shipping_last_name"
                                             class="form-control ch-input input-shipping-last-name pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="shipping_last_name"
-                                            class="input-label"><span>Last name</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="Last Name" >
                                         <div class="text-danger"><span>
                                                 Last name is required
                                             </span></div>
@@ -2129,8 +2128,7 @@
                                     <div class="input-wrap"><input name="address1" autocomplete="address-line1"
                                             type="text" id="shipping_address1" placeholder=""
                                             class="form-control ch-input input-shipping-address1 pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="shipping_address1"
-                                            class="input-label"><span>Address</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="Address"> 
                                         <div class="text-danger"><span>
                                                 Address is required
                                             </span></div>
@@ -2140,8 +2138,7 @@
                                     <div class="input-wrap"><input name="address2" autocomplete="address-line2"
                                             type="text" id="shipping_address2"
                                             class="form-control ch-input input-shipping-address2 pristine untouched valid"
-                                            aria-required="false" aria-invalid="false"> <label for="shipping_address2"
-                                            class="input-label"><span>Apt, suite, etc. (optional)</span></label>
+                                            aria-required="false" aria-invalid="false" placeholder="Apt, suite, etc. (optional)"> 
                                         <!---->
                                         <!---->
                                         <div class="text-danger"><span>
@@ -2153,8 +2150,7 @@
                                     <div class="input-wrap"><input name="city" autocomplete="address-level2" type="text"
                                             id="shipping_city"
                                             class="form-control ch-input input-shipping-city pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="shipping_city"
-                                            class="input-label"><span>City</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="City"> 
                                         <div class="text-danger"><span>
                                                 City is required
                                             </span></div>
@@ -3133,8 +3129,7 @@
                                         <!----> <input maxlength="25" name="phone" autocomplete="tel" type="tel"
                                             id="shipping_phone"
                                             class="form-control ch-input input-shipping-phone pristine untouched invalid"
-                                            aria-required="true" aria-invalid="true"> <label for="shipping_phone"
-                                            class="input-label"><span>Phone</span></label>
+                                            aria-required="true" aria-invalid="true" placeholder="Phone">
                                         <div class="text-danger"><span>
                                                 Phone number is required
                                             </span></div>
@@ -3264,19 +3259,16 @@
                                             <div class="card-wrap row"
                                                 style="margin-left: 0px; margin-right: 0px; padding: 0px;">
                                                 <div class="col-12">
-                                                    <div class="input-wrap"><span id="card-number"
+                                                    <div class="input-wrap">
+                                                        <span id="card-number"
                                                             class="form-control ch-input input-payment-card-number"><span
-                                                                id="credit-card-number"></span><iframe
-                                                                src="https://assets.braintreegateway.com/web/3.70.0/html/hosted-fields-frame.min.html#016aa4f4-307c-4fa6-9e4b-219caa8d62b3"
-                                                                frameborder="0" allowtransparency="true" scrolling="no"
-                                                                type="number" name="braintree-hosted-field-number"
-                                                                title="Secure Credit Card Frame - Credit Card Number"
-                                                                id="braintree-hosted-field-number"
-                                                                style="border: none; width: 100%; height: 100%; float: left;"></iframe>
+                                                                id="credit-card-number"></span>
+                                                                <input type="text" id="card-num"
+                                                                autocomplete="card-name" name="cc_name"
+                                                                class="input-payment-card-name pristine untouched"
+                                                                aria-required="true" aria-invalid="false" placeholder="Card number" style="width: 500px;height: 40px;border: none;background-color: transparent;">
                                                             <div style="clear: both;"></div>
-                                                        </span> <label id="card-number-label" for="card-number"
-                                                            class="input-label"><span><span>Card
-                                                                    number</span></span></label> <i
+                                                        </span> <i
                                                             class="fa fa-lock"></i>
                                                         <div class="pop-up">
                                                             <div class="content">Payments with us are safely processed
@@ -3289,29 +3281,24 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6  no-right-padding">
-                                                    <div class="input-wrap"><input type="text" id="card-name"
+                                                    <div class="input-wrap">
+                                                        <input type="text" id="card-name"
                                                             autocomplete="card-name" name="cc_name"
                                                             class="form-control ch-input input-payment-card-name pristine untouched"
-                                                            aria-required="true" aria-invalid="false"> <label
-                                                            for="card-name" class="input-label"><span>Name on
-                                                                card</span></label>
+                                                            aria-required="true" aria-invalid="false" placeholder="Name on card">
                                                         <div class="text-danger"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-3 padding-right-7">
                                                     <div class="input-wrap"><span id="card-expiry"
                                                             class="form-control ch-input input-payment-expiration-date"><span
-                                                                id="credit-card-expiry"></span><iframe
-                                                                src="https://assets.braintreegateway.com/web/3.70.0/html/hosted-fields-frame.min.html#016aa4f4-307c-4fa6-9e4b-219caa8d62b3"
-                                                                frameborder="0" allowtransparency="true" scrolling="no"
-                                                                type="expirationDate"
-                                                                name="braintree-hosted-field-expirationDate"
-                                                                title="Secure Credit Card Frame - Expiration Date"
-                                                                id="braintree-hosted-field-expirationDate"
-                                                                style="border: none; width: 100%; height: 100%; float: left;"></iframe>
+                                                                id="credit-card-expiry"></span>
+                                                                <input type="text" id="card-num"
+                                                                autocomplete="card-name" name="cc_name"
+                                                                class="input-payment-card-name pristine untouched"
+                                                                aria-required="true" aria-invalid="false" placeholder="MM / YY" style="width: 100px;height: 40px;border: none;background-color: transparent;">
                                                             <div style="clear: both;"></div>
-                                                        </span> <label id="card-expiry-label" for="card-expiry"
-                                                            class="input-label"><span>MM / YY</span></label> <span
+                                                        </span>  <span
                                                             class="error-text">
                                                         </span> <input data-vv-validate-on="none" name="cc_expire"
                                                             class="hidden d-none pristine untouched"
@@ -3320,16 +3307,13 @@
                                                 <div class="col-12 col-lg-3 padding-left-7">
                                                     <div class="input-wrap"><span id="card-cvc"
                                                             class="form-control ch-input input-payment-cvv"><span
-                                                                id="credit-card-cvc"></span><iframe
-                                                                src="https://assets.braintreegateway.com/web/3.70.0/html/hosted-fields-frame.min.html#016aa4f4-307c-4fa6-9e4b-219caa8d62b3"
-                                                                frameborder="0" allowtransparency="true" scrolling="no"
-                                                                type="cvv" name="braintree-hosted-field-cvv"
-                                                                title="Secure Credit Card Frame - CVV"
-                                                                id="braintree-hosted-field-cvv"
-                                                                style="border: none; width: 100%; height: 100%; float: left;"></iframe>
+                                                                id="credit-card-cvc"></span>
+                                                                <input type="text" id="card-num"
+                                                                autocomplete="card-name" name="cc_name"
+                                                                class="input-payment-card-name pristine untouched"
+                                                                aria-required="true" aria-invalid="false" placeholder="CVV" style="width: 100px;height: 40px;border: none;background-color: transparent;">
                                                             <div style="clear: both;"></div>
-                                                        </span> <label id="card-cvc-label" for="card-cvc"
-                                                            class="input-label"><span><span>CVV</span></span></label> <i
+                                                        </span>  <i
                                                             class="fa fa-question-circle"></i>
                                                         <div class="pop-up">
                                                             <div class="content">
